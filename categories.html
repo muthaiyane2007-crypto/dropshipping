@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Categories | Nuvora</title>
+<meta name="description" content="Browse Nuvora's full category range — Electronics, Home & Kitchen, Fashion, Furniture, Beauty, Sports, Accessories, Toys, Books, Office Supplies, Automotive, and Pet Supplies.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark"><i class="fa-solid fa-bolt"></i></div><div class="loader-bar"><span></span></div><div class="loader-text">Nuvora</div></div>
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i> <span>Categories</span></div>
+      <h1>Shop by Category</h1>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="grid-4" id="categories-full-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <button class="fab fab-top" id="fab-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  injectLayout("categories.html");
+  const grid = document.getElementById("categories-full-grid");
+  grid.innerHTML = NUVORA_DATA.CATEGORIES.map((c, i) => {
+    const items = NUVORA_DATA.getByCategory(c.key);
+    const sample = items[0];
+    return `
+    <a class="card" href="products.html?category=${c.key}" data-aos="fade-up" data-aos-delay="${(i % 4) * 60}" style="overflow:hidden;display:block;">
+      <div style="aspect-ratio:16/10;overflow:hidden;position:relative;">
+        <img src="${sample.images[0]}" alt="${c.label}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%, rgba(15,22,41,.65));"></div>
+        <span style="position:absolute;bottom:14px;left:16px;color:#fff;font-family:var(--font-display);font-weight:600;font-size:16px;">${c.label}</span>
+        <span style="position:absolute;top:14px;left:14px;width:42px;height:42px;border-radius:12px;background:${c.color};display:flex;align-items:center;justify-content:center;color:#fff;"><i class="${c.icon}"></i></span>
+      </div>
+      <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:12.5px;color:var(--ink-faint);">${items.length} products</span>
+        <span style="font-size:12.5px;color:var(--blue-600);font-weight:600;">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>`;
+  }).join("");
+});
+</script>
+</body>
+</html>

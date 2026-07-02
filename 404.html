@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Nuvora</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="container error-wrap">
+    <div class="error-code">404</div>
+    <h2 style="margin-top:-10px;">This page wandered off our shelves.</h2>
+    <p style="max-width:440px;margin:10px auto 30px;">The page you're looking for doesn't exist, may have moved, or the link might be broken. Let's get you back to shopping.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-house"></i> Back to Home</a>
+      <a href="products.html" class="btn btn-outline"><i class="fa-solid fa-bag-shopping"></i> Browse Products</a>
+    </div>
+
+    <div style="margin-top:60px;max-width:420px;margin-left:auto;margin-right:auto;">
+      <div class="nav-search" style="max-width:none;position:relative;">
+        <input type="text" id="err-search-input" placeholder="Search for a product..." style="width:100%;">
+        <button type="button" id="err-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+</div>
+
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  injectLayout("");
+  document.getElementById("err-search-btn").addEventListener("click", go);
+  document.getElementById("err-search-input").addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
+  function go() {
+    const q = document.getElementById("err-search-input").value.trim();
+    if (q) window.location.href = "products.html?q=" + encodeURIComponent(q);
+  }
+});
+</script>
+</body>
+</html>

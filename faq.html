@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | Nuvora</title>
+<meta name="description" content="Frequently asked questions about ordering, delivery, payments, and returns at Nuvora.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark"><i class="fa-solid fa-bolt"></i></div><div class="loader-bar"><span></span></div><div class="loader-text">Nuvora</div></div>
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i> <span>FAQ</span></div>
+      <h1>Frequently Asked Questions</h1>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="container" style="max-width:820px;">
+      <div class="faq-cats" id="faq-cats"></div>
+      <div id="faq-list"></div>
+    </div>
+  </section>
+
+  <section class="section-tight" style="padding-top:0;">
+    <div class="container">
+      <div class="newsletter">
+        <div><h3>Still have questions?</h3><p style="margin:0;">Reach out to us directly on Instagram — we usually reply within a few hours.</p></div>
+        <a href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" class="btn btn-ig"><i class="fa-brands fa-instagram"></i> Message Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <button class="fab fab-top" id="fab-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script>
+const FAQ_DATA = [
+  { cat: "Ordering", q: "Do I need to create an account to order?", a: "No. Nuvora doesn't use logins or accounts. You simply browse products, click Buy Now, fill in your delivery details, and generate an order PDF." },
+  { cat: "Ordering", q: "How do I actually place an order?", a: "Pick a product, click Buy Now, fill in the delivery form, and click Generate Order PDF. Download the PDF and send it to us via Instagram Direct Message at @mech_designhub. We'll verify and confirm it manually." },
+  { cat: "Ordering", q: "Can I order more than one product at a time?", a: "Right now each order PDF covers one product with an adjustable quantity. For multiple different products, simply generate a separate PDF for each and send them together in one DM." },
+  { cat: "Ordering", q: "I made a mistake on my order form. What do I do?", a: "No problem — just generate a new PDF with the corrected details and send that one instead, or message us on Instagram and we'll update it manually before confirming." },
+  { cat: "Payments", q: "Do you accept payments on the website?", a: "No. This website does not process any payments. All payment arrangements are discussed and confirmed manually after we verify your order over Instagram DM." },
+  { cat: "Payments", q: "What payment methods are accepted?", a: "Payment options are shared directly with you once your order is verified and confirmed via Instagram DM — this varies and is communicated per order." },
+  { cat: "Delivery", q: "How long does delivery take?", a: "Estimated delivery time is shown on every product page and order summary, typically 3–9 business days after your order is confirmed, depending on the product and your location." },
+  { cat: "Delivery", q: "Do you deliver across all of India?", a: "We deliver to most serviceable PIN codes across India. Final delivery availability is confirmed by our team once we review your order details." },
+  { cat: "Delivery", q: "Is delivery free?", a: "Many products include free delivery, marked with a 'Free Delivery' badge on the product card and details page. Others may have delivery charges communicated during confirmation." },
+  { cat: "Returns", q: "What is your return policy?", a: "Return eligibility varies by product and is listed on each product's detail page under Delivery & Returns. Items must be unused and in original packaging to qualify." },
+  { cat: "Returns", q: "How do I request a return or exchange?", a: "Message us on Instagram with your Order ID and reason for return. Our team will guide you through the next steps." },
+  { cat: "General", q: "Is my information safe?", a: "This site is entirely frontend — it doesn't store your data on any server. Your order details are only shared with us when you personally send the generated PDF via Instagram DM." },
+  { cat: "General", q: "Why order through Instagram instead of a normal checkout?", a: "It lets us personally verify every order before confirming it, which helps prevent address mistakes, fraud, and mix-ups — with a real person checking every detail." },
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  injectLayout("faq.html");
+  const cats = ["All", ...new Set(FAQ_DATA.map((f) => f.cat))];
+  document.getElementById("faq-cats").innerHTML = cats.map((c, i) => `<button class="btn ${i === 0 ? "btn-primary" : "btn-outline"} btn-sm" data-cat="${c}">${c}</button>`).join("");
+  renderFAQ("All");
+
+  document.getElementById("faq-cats").addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    document.querySelectorAll("#faq-cats button").forEach((b) => { b.classList.remove("btn-primary"); b.classList.add("btn-outline"); });
+    btn.classList.add("btn-primary"); btn.classList.remove("btn-outline");
+    renderFAQ(btn.dataset.cat);
+  });
+});
+
+function renderFAQ(cat) {
+  const list = cat === "All" ? FAQ_DATA : FAQ_DATA.filter((f) => f.cat === cat);
+  document.getElementById("faq-list").innerHTML = list.map((f, i) => `
+    <div class="accordion-item ${i === 0 ? "open" : ""}">
+      <div class="accordion-head" onclick="this.parentElement.classList.toggle('open')">
+        <span>${f.q}</span><i class="fa-solid fa-plus"></i>
+      </div>
+      <div class="accordion-body"><div class="accordion-body-inner">${f.a}</div></div>
+    </div>`).join("");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Order | Nuvora</title>
+<meta name="description" content="Step-by-step guide to ordering from Nuvora — browse, fill delivery details, generate a PDF, and confirm via Instagram DM.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.timeline { position: relative; max-width: 760px; margin: 0 auto; }
+.timeline::before { content:''; position:absolute; left:27px; top:10px; bottom:10px; width:2px; background:var(--gray-200); }
+.tl-item { position: relative; padding-left: 76px; margin-bottom: 34px; }
+.tl-item .tl-dot { position:absolute; left:0; top:0; width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--blue-600),var(--cyan)); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; font-size:18px; box-shadow:0 8px 20px rgba(44,92,246,.3); z-index:1; }
+.tl-item .card { padding: 20px 22px; }
+</style>
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark"><i class="fa-solid fa-bolt"></i></div><div class="loader-bar"><span></span></div><div class="loader-text">Nuvora</div></div>
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i> <span>How to Order</span></div>
+      <h1>How to Order</h1>
+      <p style="margin-top:6px;max-width:560px;">No accounts, no payment gateways — just eight simple steps between browsing and your order being on its way.</p>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="timeline">
+        <div class="tl-item" data-aos="fade-up"><div class="tl-dot">1</div><div class="card"><h4>Browse products</h4><p style="margin:0;">Explore our catalog of 150+ products across 12 categories. Use search, filters, and sorting to find exactly what you need.</p></div></div>
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="60"><div class="tl-dot">2</div><div class="card"><h4>Open the product details page</h4><p style="margin:0;">Check specs, features, pricing, delivery time, and real customer reviews before deciding.</p></div></div>
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="120"><div class="tl-dot">3</div><div class="card"><h4>Click Buy Now</h4><p style="margin:0;">Choose your quantity and head to the order form — no login required.</p></div></div>
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="180"><div class="tl-dot">4</div><div class="card"><h4>Fill in your delivery information</h4><p style="margin:0;">Enter your name, mobile number, and complete delivery address. Everything is validated in real time so you don't miss a field.</p></div></div>
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="240"><div class="tl-dot">5</div><div class="card"><h4>Generate and download the PDF</h4><p style="margin:0;">We instantly generate a professional order sheet with your Order ID, invoice number, product details, and total — ready to download.</p></div></div>
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="300"><div class="tl-dot">6</div><div class="card"><h4>Send the PDF to our Instagram account</h4><p style="margin:0;">Open Instagram directly from the success page and DM the PDF to <b>@mech_designhub</b>.</p></div></div>
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="360"><div class="tl-dot">7</div><div class="card"><h4>Wait for our team to verify your order</h4><p style="margin:0;">A real person checks your details, product availability, and delivery location — usually within a few hours.</p></div></div>
+        <div class="tl-item" data-aos="fade-up" data-aos-delay="420"><div class="tl-dot">8</div><div class="card"><h4>Receive confirmation and shipping updates</h4><p style="margin:0;">Once confirmed, we'll message you with next steps and keep you posted until your order arrives.</p></div></div>
+      </div>
+
+      <div style="text-align:center;margin-top:50px;">
+        <a href="products.html" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Start Shopping</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <button class="fab fab-top" id="fab-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script>document.addEventListener("DOMContentLoaded", () => injectLayout(""));</script>
+</body>
+</html>

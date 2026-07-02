@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Nuvora</title>
+<meta name="description" content="Get in touch with Nuvora via Instagram DM or email for order questions, support, or feedback.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark"><i class="fa-solid fa-bolt"></i></div><div class="loader-bar"><span></span></div><div class="loader-text">Nuvora</div></div>
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i> <span>Contact Us</span></div>
+      <h1>Get in Touch</h1>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="contact-grid">
+        <div data-aos="fade-right">
+          <span class="eyebrow">Fastest response</span>
+          <h2>DM us on Instagram</h2>
+          <p>For order questions, product queries, or anything else, Instagram DM is the quickest way to reach our team.</p>
+
+          <div class="card contact-info-card"><span class="ic"><i class="fa-brands fa-instagram"></i></span><div><b>Instagram DM</b><p style="margin:4px 0 0;">@mech_designhub — our official account for order confirmations and support.</p><a href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" class="btn btn-ig btn-sm" style="margin-top:10px;">Open Instagram</a></div></div>
+          <div class="card contact-info-card"><span class="ic"><i class="fa-solid fa-envelope"></i></span><div><b>Email</b><p style="margin:4px 0 0;">support@nuvora.shop — for detailed or non-urgent queries.</p></div></div>
+          <div class="card contact-info-card"><span class="ic"><i class="fa-solid fa-location-dot"></i></span><div><b>Based In</b><p style="margin:4px 0 0;">Chennai, Tamil Nadu, India</p></div></div>
+          <div class="card contact-info-card"><span class="ic"><i class="fa-solid fa-clock"></i></span><div><b>Response Hours</b><p style="margin:4px 0 0;">Monday – Saturday, 10:00 AM – 7:00 PM IST</p></div></div>
+        </div>
+
+        <div data-aos="fade-left">
+          <div class="card form-card">
+            <h3 style="margin-bottom:6px;">Send us a message</h3>
+            <p style="margin-bottom:20px;font-size:13.5px;">This form doesn't connect to a live inbox on this demo site — for real replies, please DM us on Instagram.</p>
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-grid">
+                <div class="field"><label>Full Name <span class="req">*</span></label><input type="text" required placeholder="Your name"></div>
+                <div class="field"><label>Mobile Number <span class="req">*</span></label><input type="tel" required placeholder="10-digit number" maxlength="10"></div>
+                <div class="field full"><label>Email</label><input type="email" placeholder="you@example.com"></div>
+                <div class="field full"><label>Subject <span class="req">*</span></label><input type="text" required placeholder="What's this about?"></div>
+                <div class="field full"><label>Message <span class="req">*</span></label><textarea rows="5" required placeholder="Tell us more..."></textarea></div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" style="padding-top:0;">
+    <div class="container">
+      <div class="newsletter" data-aos="zoom-in">
+        <div><h3>Have a question before ordering?</h3><p style="margin:0;">Check our FAQ — most questions about delivery, returns, and ordering are answered there.</p></div>
+        <a href="faq.html" class="btn btn-outline">View FAQ</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <button class="fab fab-top" id="fab-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => injectLayout("contact.html"));
+function handleContactSubmit(e) {
+  e.preventDefault();
+  showToast("Thanks! For a real reply, please DM us on Instagram.", "success");
+  e.target.reset();
+}
+</script>
+</body>
+</html>

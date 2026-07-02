@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Wishlist | Nuvora</title>
+<meta name="description" content="Your saved wishlist items on Nuvora.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark"><i class="fa-solid fa-bolt"></i></div><div class="loader-bar"><span></span></div><div class="loader-text">Nuvora</div></div>
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i> <span>Wishlist</span></div>
+      <h1>My Wishlist</h1>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="product-grid" id="wishlist-grid"></div>
+      <div class="wishlist-empty" id="wishlist-empty" style="display:none;">
+        <i class="fa-regular fa-heart" style="font-size:44px;color:var(--gray-300);margin-bottom:16px;"></i>
+        <h3>Your wishlist is empty</h3>
+        <p>Tap the heart icon on any product to save it here for later.</p>
+        <a href="products.html" class="btn btn-primary" style="margin-top:14px;">Browse Products</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <button class="fab fab-top" id="fab-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/product-card.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  injectLayout("");
+  renderWishlist();
+});
+function renderWishlist() {
+  const ids = Store.wishlist();
+  const products = ids.map((id) => NUVORA_DATA.getById(id)).filter(Boolean);
+  document.getElementById("wishlist-empty").style.display = products.length ? "none" : "block";
+  document.getElementById("wishlist-grid").style.display = products.length ? "grid" : "none";
+  renderProductGrid("wishlist-grid", products);
+}
+</script>
+</body>
+</html>

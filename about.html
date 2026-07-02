@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Nuvora</title>
+<meta name="description" content="Learn about Nuvora — a premium demo storefront built around simple, honest, manually-confirmed shopping via Instagram DM.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark"><i class="fa-solid fa-bolt"></i></div><div class="loader-bar"><span></span></div><div class="loader-text">Nuvora</div></div>
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i> <span>About Us</span></div>
+      <h1>About Nuvora</h1>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="hero-grid" style="grid-template-columns:1fr 1fr;align-items:center;">
+        <div data-aos="fade-right">
+          <span class="eyebrow">Our story</span>
+          <h2>Premium products, without the premium markup or the checkout headache.</h2>
+          <p>Nuvora started as a simple idea: shopping for everyday products shouldn't require signing up for another account, trusting an unfamiliar payment gateway, or wading through overpriced marketplaces. So we built a browsing experience that feels just as polished as the big platforms — clean product pages, honest pricing, real specs — and paired it with the simplest checkout there is: fill in your details, download a PDF, and DM us.</p>
+          <p>Every order is manually verified by our team before it's confirmed, which means a real person checks your details, your address, and your product selection before anything ships. It's slower than an automated checkout, but it's transparent, and it means we catch mistakes before they become problems.</p>
+        </div>
+        <div class="hero-visual" style="height:380px;" data-aos="fade-left">
+          <div class="main-card"><img src="https://picsum.photos/seed/nuvora-about/800/900" alt="Our team packing orders"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" style="background:var(--blue-50);">
+    <div class="container">
+      <div class="about-stats">
+        <div class="card about-stat" data-aos="fade-up"><b>150+</b><span>Products listed</span></div>
+        <div class="card about-stat" data-aos="fade-up" data-aos-delay="60"><b>12</b><span>Categories</span></div>
+        <div class="card about-stat" data-aos="fade-up" data-aos-delay="120"><b>4,200+</b><span>Orders fulfilled</span></div>
+        <div class="card about-stat" data-aos="fade-up" data-aos-delay="180"><b>4.6/5</b><span>Average rating</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up"><div><span class="eyebrow">What we believe</span><h2>Our values</h2></div></div>
+      <div class="grid-3">
+        <div class="card value-card" data-aos="fade-up"><span class="ic"><i class="fa-solid fa-eye"></i></span><h4>Transparency First</h4><p>Real MRPs, real discounts, and a checkout that never hides fees or auto-adds items.</p></div>
+        <div class="card value-card" data-aos="fade-up" data-aos-delay="80"><span class="ic"><i class="fa-solid fa-handshake"></i></span><h4>Human Verification</h4><p>Every order gets a real person's eyes on it before we confirm — no bots, no auto-charges.</p></div>
+        <div class="card value-card" data-aos="fade-up" data-aos-delay="160"><span class="ic"><i class="fa-solid fa-bolt"></i></span><h4>Fast & Simple</h4><p>No sign-up walls. Browse, generate a PDF, and you're done in under two minutes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="newsletter" data-aos="zoom-in">
+        <div><h3>Ready to explore the catalog?</h3><p style="margin:0;">150+ products are waiting — filter by category, brand, or price.</p></div>
+        <a href="products.html" class="btn btn-primary">Start Shopping <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <button class="fab fab-top" id="fab-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script>document.addEventListener("DOMContentLoaded", () => injectLayout("about.html"));</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All Products | Nuvora</title>
+<meta name="description" content="Browse 150+ products across electronics, fashion, home & kitchen, beauty, sports and more. Filter by category, brand, rating, discount and price.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark"><i class="fa-solid fa-bolt"></i></div><div class="loader-bar"><span></span></div><div class="loader-text">Nuvora</div></div>
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i> <span id="crumb-current">Shop All</span></div>
+      <h1 id="shop-title">Shop All Products</h1>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="shop-layout">
+
+        <!-- FILTERS -->
+        <aside class="filters-panel card glass" id="filters-panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <h4 style="margin:0;font-size:14px;">Filters</h4>
+            <button class="btn btn-ghost btn-sm" id="clear-filters" style="padding:5px 12px;font-size:12px;">Clear All</button>
+            <button class="nav-icon-btn mobile-filter-btn" id="close-filters"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+
+          <div class="filter-group">
+            <h4>Category</h4>
+            <div id="filter-categories"></div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Brand</h4>
+            <div id="filter-brands" style="max-height:220px;overflow-y:auto;"></div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Price Range</h4>
+            <input type="range" id="filter-price" min="0" max="25000" step="100" value="25000" style="width:100%;accent-color:var(--blue-600);">
+            <div class="price-range-inputs">
+              <span style="font-size:12.5px;">₹0</span> — <span id="price-range-label" style="font-size:12.5px;font-weight:600;">₹25,000</span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Customer Rating</h4>
+            <div id="filter-rating"></div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Discount</h4>
+            <div id="filter-discount"></div>
+          </div>
+        </aside>
+
+        <!-- PRODUCT LIST -->
+        <div>
+          <div class="shop-toolbar">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <button class="btn btn-outline btn-sm mobile-filter-btn" id="open-filters"><i class="fa-solid fa-sliders"></i> Filters</button>
+              <span class="results-count" id="results-count">150 products</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <select id="sort-select" aria-label="Sort products">
+                <option value="popular">Most Popular</option>
+                <option value="rating">Best Rating</option>
+                <option value="discount">Biggest Discount</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="newest">Newest First</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="active-filters" id="active-filters"></div>
+
+          <div class="product-grid" id="products-grid"></div>
+
+          <div id="no-results" style="display:none;">
+            <i class="fa-solid fa-box-open"></i>
+            <h3>No products match your filters</h3>
+            <p>Try clearing a few filters or searching a different term.</p>
+            <button class="btn btn-primary" id="no-results-clear">Clear Filters</button>
+          </div>
+
+          <div id="load-more-wrap">
+            <button class="btn btn-outline" id="load-more-btn">Load More Products <i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <button class="fab fab-top" id="fab-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/product-card.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

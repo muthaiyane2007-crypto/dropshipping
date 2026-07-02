@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Product Details | Nuvora</title>
+<meta name="description" content="View full product details, specifications, features, and customer reviews.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232C5CF6%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark"><i class="fa-solid fa-bolt"></i></div><div class="loader-bar"><span></span></div><div class="loader-text">Nuvora</div></div>
+<div id="scroll-progress"></div>
+<div id="toast-stack"></div>
+
+<header id="navbar"></header>
+<div id="mobile-drawer"></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i>
+        <a href="products.html" id="crumb-category">Shop</a> <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i>
+        <span id="crumb-product">Product</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="container">
+      <div id="pd-root"></div>
+
+      <div class="pd-tabs">
+        <div class="tab-nav" id="pd-tab-nav">
+          <button class="active" data-tab="description">Description</button>
+          <button data-tab="specs">Specifications</button>
+          <button data-tab="features">Features</button>
+          <button data-tab="reviews">Reviews</button>
+          <button data-tab="delivery">Delivery & Returns</button>
+        </div>
+        <div class="tab-panel active" id="tab-description"></div>
+        <div class="tab-panel" id="tab-specs"></div>
+        <div class="tab-panel" id="tab-features"></div>
+        <div class="tab-panel" id="tab-reviews"></div>
+        <div class="tab-panel" id="tab-delivery"></div>
+      </div>
+
+      <div class="section-tight" style="padding-bottom:0;">
+        <div class="section-head"><div><span class="eyebrow">You may also like</span><h2>Related Products</h2></div></div>
+        <div class="product-grid" id="related-grid"></div>
+      </div>
+
+      <div class="section-tight" id="recent-section" style="display:none;">
+        <div class="section-head"><div><span class="eyebrow">Continue browsing</span><h2>Recently Viewed</h2></div></div>
+        <div class="product-grid" id="recent-grid"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<div id="fab-stack">
+  <a class="fab fab-ig" href="https://www.instagram.com/mech_designhub/" target="_blank" rel="noopener" aria-label="Order on Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <button class="fab fab-top" id="fab-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/product-card.js"></script>
+<script src="js/product-details.js"></script>
+</body>
+</html>
